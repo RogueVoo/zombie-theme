@@ -1,0 +1,13 @@
+{
+    "name": "zombi-theme",
+    "title": "Zombi theme",
+    "description": "Dark zombi theme for Brackets",
+    "version": "1.0.0",
+    "author": "Andrey Saponenko <roguevoo@gmail.com>",
+    "license": "MIT",
+    "theme": {
+        "file": "Zombi.less",
+        "dark": true
+    },
+    "keywords": ["theme"]
+}
