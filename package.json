@@ -4,6 +4,10 @@
     "description": "Dark zombie theme for Brackets",
     "version": "1.0.0",
     "author": "Andrey Saponenko <roguevoo@gmail.com>",
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/RogueVoo/zombie-theme"
+    },
     "license": "MIT",
     "theme": {
         "file": "zombie.less",
