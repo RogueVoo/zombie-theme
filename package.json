@@ -2,7 +2,7 @@
     "name": "zombie-theme",
     "title": "Zombie theme",
     "description": "Dark zombie theme for Brackets",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Andrey Saponenko <roguevoo@gmail.com>",
 	"repository": {
         "type": "git",
