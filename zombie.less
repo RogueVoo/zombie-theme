@@ -1,94 +1,121 @@
 @background: #171514;
 @foreground: #a89f8a;
 
-/* Code Styling */
-
-.CodeMirror, .CodeMirror-scroll {
-    background-color: @background;
-    color: @foreground;
-
+._zombie_gutters{
+	.CodeMirror-gutter-elt {
+		background: #505050;
+		color: #fff;
+	}
+	.inline-widget .CodeMirror-gutter-elt {
+		color: #767676;
+	}
 }
 
-.CodeMirror-focused .CodeMirror-activeline-background {
-    background: #211e1c;
+.cm-s-zombie-theme {
+
+	.CodeMirror-scroll {
+		background-color: @background;
+		color: @foreground;
+	}
+
+	.CodeMirror-focused {
+		color: #c0c0c0;
+		._zombie_gutters();
+	}
+
+	.CodeMirror-activeline{
+
+		.CodeMirror-activeline-background{
+			background: #211e1c;
+		}
+
+		._zombie_gutters();
+
+	}
+
+	.CodeMirror-cursor {
+		border-left: 1px solid #fff;
+	}
+
+	.CodeMirror-gutters {
+		background-color: @background;
+		border-right: none;
+	}
+
+	.CodeMirror-selected {
+		//background: #333f48;
+		background: #2c2826;
+	}
+	.CodeMirror-focused {
+		background: #2c2826;
+	}
+
+	.CodeMirror-matchingbracket,
+	.CodeMirror-matchingtag {
+		position: relative;
+		color: @foreground !important;
+		background-color: transparent;
+		display: inline-block;
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(199, 158, 137, 0.2);
+			box-shadow: 0px 0px 10px rgba(255, 228, 89, 0.5);
+			border-radius: 2em;
+		}
+	}
+
+	.CodeMirror-overwrite .CodeMirror-cursor {
+		border-left: none !important;
+		border-bottom: 1px solid #fff;
+	}
+
+	.CodeMirror-code{
+		.cm-atom{
+			color:#675889;
+			font-weight: bold;
+		}
+		.cm-attribute{color:#ffffff;}
+		.cm-string{color:#3f9320;}
+		.cm-def{color:#cc9e55; font-weight: 500;}
+		.cm-hr {color:#d68686;}
+		.cm-number{color:#478d3a;}
+		.cm-property {color:#a38e60;}
+		.cm-operator{color:#696969;}
+		.cm-meta{color:#c6c797;}
+		.cm-variable{color:#b19a67;}
+		.cm-variable-2{color:#9b8f74;}
+		.cm-variable-3{color:#9b8f74;}
+		.cm-bracket {color:#bfaf74;}
+		.cm-comment {color: #5f5f5f;}
+		.cm-error, .cm-minus {color: #dc322f;}
+		.cm-header {color: #d85896;}
+		.cm-link {color: #837fdb; text-decoration: none;}
+		.cm-rangeinfo {color: #6c71c4;}
+		.cm-keyword{color:#4a6e96; font-weight: bold;}
+		.cm-builtin, .cm-quote {color: #f9fabc;}
+		.cm-qualifier{color:#87954d;}
+		.cm-tag{color:#fed6af;}
+		.cm-tab{
+			position: relative;
+
+			&:before{
+				background-color: rgba(180, 180, 180, 0.03);
+				display: block;
+				content: ' ';
+				width: 100%;
+				margin: 0 auto;
+				position: absolute;
+				border-right: 1px solid rgba(255,255,255,0.05);
+			}
+		}
+	}
+
 }
-&.show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
-    box-shadow: inset 15px 0 0 0 #000;
-}
-
-.CodeMirror-focused .CodeMirror-activeline {
-    .CodeMirror-gutter-elt {
-        background: #505050;
-        color: #fff;
-    }
-    .inline-widget .CodeMirror-gutter-elt {
-        color: #767676;
-    }
-}
-.cm-atom{color:#675889; font-weight: bold; }
-.cm-attribute{color:#ffffff;}
-.cm-string{color:#3f9320;}
-.cm-def{color:#cc9e55; font-weight: 500;}
-.cm-hr {color:#d68686;}
-.cm-number{color:#478d3a;}
-.cm-property {color:#a38e60;}
-.cm-operator{color:#696969;}
-.cm-meta{color:#c6c797;}
-.cm-variable{color:#b19a67;}
-.cm-variable-2{color:#9b8f74;}
-.cm-variable-3{color:#9b8f74;}
-.cm-bracket {color:#bfaf74;}
-.cm-comment {color: #5f5f5f;}
-.cm-error, .cm-minus {color: #dc322f;}
-.cm-header {color: #d85896;}
-.cm-link {color: #837fdb; text-decoration: none;}
-.cm-rangeinfo {color: #6c71c4;}
-.cm-keyword{color:#4a6e96; font-weight: bold;}
-.cm-builtin, .cm-quote {color: #f9fabc;}
-.cm-qualifier{color:#87954d;}
-.cm-tag{color:#fed6af;}
-
-
-/* Extra CSS */
-
-.CodeMirror.find-highlighting div.CodeMirror-selected,
-.CodeMirror .CodeMirror.find-highlighting div.CodeMirror-selected {
-    background: red;
-}
-
-.CodeMirror-cursor {
-    border-left: 1px solid #fff;
-}
-
-.CodeMirror-gutters {
-    background-color: @background;
-    border-right: none;
-}
-
-.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt {
-    color: #c0c0c0;
-}
-
-.CodeMirror .CodeMirror-selected {
-    background: #333f48;
-}
-.CodeMirror-focused .CodeMirror-selected {
-    background: #2c2826;
-}
-
-.CodeMirror-matchingbracket, .CodeMirror-matchingtag {
-    /* Ensure visibility against gray inline editor background */
-     background-color: #7b7b7b;
-
-    color: @foreground !important;
-}
-
-.CodeMirror-overwrite .CodeMirror-cursor {
-    border-left: none !important;
-    border-bottom: 1px solid #fff;
-}
-
-/* Non-editor styling */
 
 #image-holder,
 #not-editor {
